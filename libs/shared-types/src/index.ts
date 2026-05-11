@@ -6,6 +6,7 @@ export interface Flashcard {
   front: string; // The term or question
   back: string;  // The definition or answer
   explanation?: string; // Optional longer explanation
+  description?: string; // Optional markdown description / usage example
 }
 
 export interface FlashcardSet {
@@ -20,6 +21,7 @@ export interface FlashcardSet {
   createdAt: Timestamp;
   updatedAt: Timestamp;
   appliedRuleIds?: string[];
+  appliedDescriptionRuleIds?: string[];
 }
 
 // Flashcard API Types
@@ -31,6 +33,7 @@ export interface GenerateFlashcardsRequest {
   /** @deprecated Auto-resolved from directory hierarchy when omitted */
   ruleIds?: string[];
   additionalRuleIds?: string[];
+  descriptionRuleIds?: string[];
 }
 
 export interface GenerateFlashcardsResponse {
@@ -722,6 +725,7 @@ export enum RuleApplicability {
   QUIZ = 'quiz',
   FOLLOWUP = 'followup',
   FLASHCARD = 'flashcard',
+  FLASHCARD_DESC = 'flashcard_desc',
   SLIDE_DECK = 'slide_deck',
   DIAGRAM_QUIZ = 'diagram_quiz',
   SEQUENCE_QUIZ = 'sequence_quiz',

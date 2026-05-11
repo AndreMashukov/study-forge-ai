@@ -1,5 +1,7 @@
+import { buildFlashcardDescriptionRulesSection } from './flashcard-desc-prompt-builder';
+
 export const FlashcardPromptBuilder = {
-  buildFlashcardPrompt(content: string, rules?: string): string {
+  buildFlashcardPrompt(content: string, rules?: string, descriptionRules?: string): string {
     const hasRules = !!rules?.trim();
 
     const frontBackInstructions = hasRules
@@ -12,6 +14,8 @@ export const FlashcardPromptBuilder = {
       ? `\nINJECTED RULES (take priority over default instructions):\n---\n${rules}\n---\n`
       : '';
 
+    const descriptionSection = buildFlashcardDescriptionRulesSection(descriptionRules);
+
     return `You are an expert in educational content creation. Your task is to extract key terms, concepts, and important facts from the following document and format them as flashcards.
 
 CRITICAL OUTPUT RULES:
@@ -23,11 +27,12 @@ ${rulesSection}
 Instructions:
 1. Analyze the document provided below.
 2. Identify between 10 and 20 critical terms or concepts essential for understanding the material.
-3. For each term, create a flashcard object with a "front" and a "back" field.
+3. For each term, create a flashcard object with a "front", "back", and "description" field.
 ${frontBackInstructions}
-
+6. The "description" field must be a short markdown string following the description generation rules below.
+${descriptionSection}
 Required output format (raw JSON array, no markdown):
-[{"front":"Term or Question 1","back":"Clear and concise definition or answer 1."},{"front":"Term or Question 2","back":"Clear and concise definition or answer 2."}]
+[{"front":"Term or Question 1","back":"Clear and concise definition or answer 1.","description":"Example of usage or context for Term 1."}]
 
 Document Content to Analyze:
 ---

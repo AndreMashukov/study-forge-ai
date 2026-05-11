@@ -3,6 +3,7 @@ import { Page } from '../../../components/Page';
 import { Card, CardContent } from '../../../components/ui/Card';
 import { Button } from '../../../components/ui/Button';
 import { useFlashcardSetPageContext } from '../context/hooks/useFlashcardSetPageContext';
+import { MarkdownRenderer } from '../../../components/MarkdownRenderer';
 import {
   ArrowLeft,
   ArrowRight,
@@ -225,6 +226,15 @@ export const FlashcardSetPageContainer = () => {
               </button>
             </div>
           </div>
+
+          {/* Description */}
+          {currentCard.description && (
+            <div className="px-4 sm:px-6 pb-5 max-w-2xl mx-auto w-full">
+              <div className="rounded-xl border border-border bg-muted/40 px-4 py-3">
+                <MarkdownRenderer content={currentCard.description} showToc={false} />
+              </div>
+            </div>
+          )}
         </div>
       </Page>
     );
@@ -357,6 +367,15 @@ export const FlashcardSetPageContainer = () => {
             </button>
           </div>
         </div>
+
+        {/* ── Description ────────────────────────────────────────── */}
+        {currentCard.description && (
+          <div className="px-4 sm:px-6 pb-5">
+            <div className="max-w-2xl mx-auto rounded-xl border border-border bg-muted/40 px-4 py-3">
+              <MarkdownRenderer content={currentCard.description} showToc={false} />
+            </div>
+          </div>
+        )}
       </div>
     </Page>
   );

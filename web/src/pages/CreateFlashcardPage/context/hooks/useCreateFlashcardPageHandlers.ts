@@ -37,6 +37,7 @@ export const useCreateFlashcardPageHandlers = ({ form, documents }: UseCreateFla
       ...(trimmedTitle ? { title: trimmedTitle } : {}),
       ...(trimmedPrompt ? { additionalPrompt: trimmedPrompt } : {}),
       ...(formData.ruleIds?.length ? { ruleIds: formData.ruleIds } : {}),
+      ...(formData.descriptionRuleIds?.length ? { descriptionRuleIds: formData.descriptionRuleIds } : {}),
     });
     navigate(`/directory/${encodeURIComponent(resolvedDirectoryId)}?tab=cards`);
   }, [generateFlashcards, navigate, documents, searchParams]);
