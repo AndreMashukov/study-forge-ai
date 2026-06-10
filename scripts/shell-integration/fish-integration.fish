@@ -18,22 +18,22 @@ else
 end
 
 # Set workspace root
-set -gx CODE_INSIGHTS_AI_ROOT (cd (dirname (status --current-filename))/../..; and pwd)
+set -gx STUDY_FORGE_AI_ROOT (cd (dirname (status --current-filename))/../..; and pwd)
 
 # Custom prompt function to show current project context
-function __code_insights_ai_prompt
-    if string match -q "$CODE_INSIGHTS_AI_ROOT*" "$PWD"
-        set relative_path (string replace "$CODE_INSIGHTS_AI_ROOT" "" "$PWD")
+function __study_forge_ai_prompt
+    if string match -q "$STUDY_FORGE_AI_ROOT*" "$PWD"
+        set relative_path (string replace "$STUDY_FORGE_AI_ROOT" "" "$PWD")
         if test -z "$relative_path"
             set relative_path "/"
         end
-        echo -n (set_color cyan)"[code-insights-ai:$relative_path]"(set_color normal)" "
+        echo -n (set_color cyan)"[study-forge-ai:$relative_path]"(set_color normal)" "
     end
 end
 
 # Add to prompt
 function fish_prompt
-    __code_insights_ai_prompt
+    __study_forge_ai_prompt
     # Fallback to default prompt if no other prompt is defined
     if not functions -q __original_fish_prompt
         echo -n (prompt_pwd)"> "
@@ -69,15 +69,15 @@ end
 
 # Quick navigation aliases
 function cdweb
-    cd $CODE_INSIGHTS_AI_ROOT/web
+    cd $STUDY_FORGE_AI_ROOT/web
 end
 
 function cdfunctions
-    cd $CODE_INSIGHTS_AI_ROOT/functions
+    cd $STUDY_FORGE_AI_ROOT/functions
 end
 
 function cdlibs
-    cd $CODE_INSIGHTS_AI_ROOT/libs
+    cd $STUDY_FORGE_AI_ROOT/libs
 end
 
 # Fish-specific enhancements
@@ -87,4 +87,4 @@ set -g fish_autosuggestion_enabled 1
 # Custom completions for nx (basic)
 complete -c nx -f -a "build test lint serve deploy"
 
-echo "VS Code Shell Integration for code-insights-ai workspace loaded (fish)."
+echo "VS Code Shell Integration for study-forge-ai workspace loaded (fish)."

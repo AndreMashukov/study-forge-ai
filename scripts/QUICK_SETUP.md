@@ -8,7 +8,7 @@ Open your `.env.local` file and add these lines:
 # Firebase Emulator Configuration (NO CREDENTIALS NEEDED!)
 FIREBASE_AUTH_EMULATOR_HOST=localhost:9099
 FIRESTORE_EMULATOR_HOST=localhost:8080
-GCLOUD_PROJECT=code-insights-quiz-ai
+GCLOUD_PROJECT=study-forge-ai
 ```
 
 ## Complete Example `.env.local` Structure
@@ -21,15 +21,15 @@ Your `.env.local` should look something like this:
 # ============================================
 FIREBASE_AUTH_EMULATOR_HOST=localhost:9099
 FIRESTORE_EMULATOR_HOST=localhost:8080
-GCLOUD_PROJECT=code-insights-quiz-ai
+GCLOUD_PROJECT=study-forge-ai
 
 # ============================================
 # Web App Firebase Config (Client-Side)
 # ============================================
 NX_PUBLIC_FIREBASE_API_KEY=your-api-key
-NX_PUBLIC_FIREBASE_AUTH_DOMAIN=code-insights-quiz-ai.firebaseapp.com
-NX_PUBLIC_FIREBASE_PROJECT_ID=code-insights-quiz-ai
-NX_PUBLIC_FIREBASE_STORAGE_BUCKET=code-insights-quiz-ai.appspot.com
+NX_PUBLIC_FIREBASE_AUTH_DOMAIN=study-forge-ai.firebaseapp.com
+NX_PUBLIC_FIREBASE_PROJECT_ID=study-forge-ai
+NX_PUBLIC_FIREBASE_STORAGE_BUCKET=study-forge-ai.appspot.com
 NX_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=123456789012
 NX_PUBLIC_FIREBASE_APP_ID=1:123456789012:web:your-app-id
 

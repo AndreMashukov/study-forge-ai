@@ -6,7 +6,7 @@ set -euo pipefail
 ROOT_DIR="$(pwd)"
 
 echo "=========================================="
-echo "Setting up code-insights-ai worktree..."
+echo "Setting up study-forge-ai worktree..."
 echo "Working directory: $ROOT_DIR"
 echo "=========================================="
 
@@ -18,7 +18,7 @@ if [[ ! -d ".git" && ! -f ".git" ]]; then
 fi
 
 # Find the main worktree directory (where env.dev is located)
-MAIN_WORKTREE="/Users/andreymashukov/Desktop/projects/code-insights-ai"
+MAIN_WORKTREE="/Users/andreymashukov/Desktop/projects/study-forge-ai"
 if [[ ! -f "$MAIN_WORKTREE/env.dev" ]]; then
   echo "⚠️  Warning: env.dev not found in main worktree at $MAIN_WORKTREE"
   echo "Falling back to .env.example if available"

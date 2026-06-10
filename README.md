@@ -1,6 +1,6 @@
-# code-insights-ai
+# study-forge-ai
 
-AI-powered code insights and analysis platform built with modern web technologies.
+AI-powered study and learning platform built with modern web technologies.
 
 > **Status:** ✅ Firebase Functions deployment permissions fixed - Testing in progress
 

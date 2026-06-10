@@ -22,7 +22,7 @@ export class DocumentService {
 
     // In production, prefer FIREBASE_CONFIG.storageBucket — Firebase injects this automatically
     // at runtime and it always points to the correct default bucket
-    // (e.g. code-insights-quiz-ai.firebasestorage.app).
+    // (e.g. study-forge-ai.firebasestorage.app).
     // In the emulator, FIREBASE_CONFIG may not be set or may differ, so fall back to
     // STORAGE_BUCKET env var (which uses the .appspot.com form the emulator expects).
     let bucketName: string | undefined;

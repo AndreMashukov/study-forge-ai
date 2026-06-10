@@ -27,17 +27,17 @@ else {
 }
 
 # Set workspace root
-$env:CODE_INSIGHTS_AI_ROOT = Resolve-Path (Join-Path $PSScriptRoot "../..")
+$env:STUDY_FORGE_AI_ROOT = Resolve-Path (Join-Path $PSScriptRoot "../..")
 
 # Custom prompt function to show current project context
 function Prompt {
     $currentPath = Get-Location
-    if ($currentPath.Path.StartsWith($env:CODE_INSIGHTS_AI_ROOT)) {
-        $relativePath = $currentPath.Path.Substring($env:CODE_INSIGHTS_AI_ROOT.Length)
+    if ($currentPath.Path.StartsWith($env:STUDY_FORGE_AI_ROOT)) {
+        $relativePath = $currentPath.Path.Substring($env:STUDY_FORGE_AI_ROOT.Length)
         if ([string]::IsNullOrEmpty($relativePath)) {
             $relativePath = "/"
         }
-        Write-Host "[code-insights-ai:$relativePath] " -ForegroundColor Cyan -NoNewline
+        Write-Host "[study-forge-ai:$relativePath] " -ForegroundColor Cyan -NoNewline
     }
     
     # Return the default prompt
@@ -53,9 +53,9 @@ function nxt { npx nx test @args }
 function nxl { npx nx lint @args }
 
 # Quick navigation aliases
-function cdweb { Set-Location (Join-Path $env:CODE_INSIGHTS_AI_ROOT "web") }
-function cdfunctions { Set-Location (Join-Path $env:CODE_INSIGHTS_AI_ROOT "functions") }
-function cdlibs { Set-Location (Join-Path $env:CODE_INSIGHTS_AI_ROOT "libs") }
+function cdweb { Set-Location (Join-Path $env:STUDY_FORGE_AI_ROOT "web") }
+function cdfunctions { Set-Location (Join-Path $env:STUDY_FORGE_AI_ROOT "functions") }
+function cdlibs { Set-Location (Join-Path $env:STUDY_FORGE_AI_ROOT "libs") }
 
 # PowerShell-specific enhancements
 # Enable command prediction (PowerShell 7.2+)
@@ -66,4 +66,4 @@ if ($PSVersionTable.PSVersion -ge [Version]"7.2.0") {
 # Enhanced tab completion
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 
-Write-Host "VS Code Shell Integration for code-insights-ai workspace loaded (PowerShell)." -ForegroundColor Green
+Write-Host "VS Code Shell Integration for study-forge-ai workspace loaded (PowerShell)." -ForegroundColor Green

@@ -1,4 +1,4 @@
-# Quick Reference — Code Insights AI
+# Quick Reference — Study Forge AI
 
 ## Dev Commands
 

@@ -13,12 +13,12 @@ Add to your `.env.local` or export in your shell:
 export GOOGLE_APPLICATION_CREDENTIALS="/path/to/your/service-account-key.json"
 
 # Optional: Explicitly set project ID (if not in service account)
-export GCLOUD_PROJECT="code-insights-quiz-ai"
+export GCLOUD_PROJECT="study-forge-ai"
 ```
 
 **To get a service account key:**
 1. Go to [Firebase Console](https://console.firebase.google.com/)
-2. Select your project: `code-insights-quiz-ai`
+2. Select your project: `study-forge-ai`
 3. Go to Project Settings → Service Accounts
 4. Click "Generate New Private Key"
 5. Save the JSON file securely (e.g., `~/.config/firebase-service-account.json`)
@@ -32,7 +32,7 @@ Add to your `.env.local`:
 # Firebase Emulator Configuration
 export FIREBASE_AUTH_EMULATOR_HOST="localhost:9099"
 export FIRESTORE_EMULATOR_HOST="localhost:8080"
-export GCLOUD_PROJECT="code-insights-quiz-ai"
+export GCLOUD_PROJECT="study-forge-ai"
 ```
 
 **Note:** Make sure Firebase emulators are running:
@@ -59,9 +59,9 @@ The web app uses `NX_PUBLIC_*` prefixed variables. These are different from Admi
 ```bash
 # Web App Firebase Configuration (Client-Side)
 NX_PUBLIC_FIREBASE_API_KEY="your-api-key"
-NX_PUBLIC_FIREBASE_AUTH_DOMAIN="code-insights-quiz-ai.firebaseapp.com"
-NX_PUBLIC_FIREBASE_PROJECT_ID="code-insights-quiz-ai"
-NX_PUBLIC_FIREBASE_STORAGE_BUCKET="code-insights-quiz-ai.appspot.com"
+NX_PUBLIC_FIREBASE_AUTH_DOMAIN="study-forge-ai.firebaseapp.com"
+NX_PUBLIC_FIREBASE_PROJECT_ID="study-forge-ai"
+NX_PUBLIC_FIREBASE_STORAGE_BUCKET="study-forge-ai.appspot.com"
 NX_PUBLIC_FIREBASE_MESSAGING_SENDER_ID="your-sender-id"
 NX_PUBLIC_FIREBASE_APP_ID="your-app-id"
 
@@ -85,15 +85,15 @@ export GOOGLE_APPLICATION_CREDENTIALS="/Users/yourusername/.config/firebase-serv
 # export FIRESTORE_EMULATOR_HOST="localhost:8080"
 
 # Project ID (optional, usually in service account)
-export GCLOUD_PROJECT="code-insights-quiz-ai"
+export GCLOUD_PROJECT="study-forge-ai"
 
 # ============================================
 # Web App Firebase Config (Client-Side)
 # ============================================
 NX_PUBLIC_FIREBASE_API_KEY="your-api-key-here"
-NX_PUBLIC_FIREBASE_AUTH_DOMAIN="code-insights-quiz-ai.firebaseapp.com"
-NX_PUBLIC_FIREBASE_PROJECT_ID="code-insights-quiz-ai"
-NX_PUBLIC_FIREBASE_STORAGE_BUCKET="code-insights-quiz-ai.appspot.com"
+NX_PUBLIC_FIREBASE_AUTH_DOMAIN="study-forge-ai.firebaseapp.com"
+NX_PUBLIC_FIREBASE_PROJECT_ID="study-forge-ai"
+NX_PUBLIC_FIREBASE_STORAGE_BUCKET="study-forge-ai.appspot.com"
 NX_PUBLIC_FIREBASE_MESSAGING_SENDER_ID="123456789012"
 NX_PUBLIC_FIREBASE_APP_ID="1:123456789012:web:your-app-id"
 
@@ -134,5 +134,5 @@ yarn backup:firebase
 1. **`.env.local` is gitignored** - Never commit service account keys or API keys to git
 2. **Service Account Keys** - Store securely, rotate regularly, limit access
 3. **Emulators** - Use for local development/testing, not production backups
-4. **Project ID** - Your project ID appears to be `code-insights-quiz-ai` based on the codebase
+4. **Project ID** - Your project ID appears to be `study-forge-ai` based on the codebase
 

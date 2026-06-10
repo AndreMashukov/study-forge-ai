@@ -83,7 +83,7 @@ export const ApiKeysSection: React.FC = () => {
               API Keys
             </CardTitle>
             <CardDescription>
-              Use API keys to access Code Insights AI from external applications.
+              Use API keys to access Study Forge AI from external applications.
             </CardDescription>
           </div>
           <Button size="sm" onClick={handleOpenCreate}>

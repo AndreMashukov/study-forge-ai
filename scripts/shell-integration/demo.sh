@@ -18,8 +18,8 @@ echo
 # Show workspace context
 echo "📁 Workspace Context:"
 echo "Current Directory: $(pwd)"
-if [[ "$PWD" == *"code-insights-ai"* ]]; then
-    echo "✅ Inside code-insights-ai workspace"
+if [[ "$PWD" == *"study-forge-ai"* ]]; then
+    echo "✅ Inside study-forge-ai workspace"
 else
     echo "⚠️  Not in workspace root"
 fi

@@ -1,6 +1,6 @@
 #!/bin/bash
 # VS Code Shell Integration Setup Script
-# This script helps users set up shell integration for the code-insights-ai workspace
+# This script helps users set up shell integration for the study-forge-ai workspace
 
 set -e
 
@@ -15,7 +15,7 @@ NC='\033[0m' # No Color
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 WORKSPACE_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 
-echo -e "${BLUE}Setting up VS Code Shell Integration for code-insights-ai${NC}"
+echo -e "${BLUE}Setting up VS Code Shell Integration for study-forge-ai${NC}"
 echo "Workspace: $WORKSPACE_ROOT"
 echo
 
@@ -97,7 +97,7 @@ add_to_shell_config() {
 
     # Add the integration line
     echo "" >> "$config_file"
-    echo "# VS Code Shell Integration for code-insights-ai" >> "$config_file"
+    echo "# VS Code Shell Integration for study-forge-ai" >> "$config_file"
     echo "$source_line" >> "$config_file"
     
     echo -e "${GREEN}Added integration to $config_file${NC}"

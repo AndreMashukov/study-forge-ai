@@ -5,18 +5,18 @@
  * Usage:
  *   AUTH_TOKEN=<your-firebase-id-token> DOCUMENT_ID=GAtlDTPqTjwpDQZ7CEz3 npx tsx scripts/test-storage-bucket-resolution.ts
  *
- * Get AUTH_TOKEN: Log in at https://code-insights-quiz-ai.web.app, open DevTools Console, run:
+ * Get AUTH_TOKEN: Log in at https://study-forge-ai.web.app, open DevTools Console, run:
  *   (await firebase.auth().currentUser?.getIdToken()) || 'NOT_LOGGED_IN'
  * Or use: firebase.auth().currentUser.getIdToken().then(t => console.log(t))
  */
 
-const PROD_URL = 'https://asia-east1-code-insights-quiz-ai.cloudfunctions.net/getDocumentContent';
+const PROD_URL = 'https://asia-east1-study-forge-ai.cloudfunctions.net/getDocumentContent';
 const DOCUMENT_ID = process.env.DOCUMENT_ID || 'GAtlDTPqTjwpDQZ7CEz3';
 const AUTH_TOKEN = process.env.AUTH_TOKEN;
 
 async function main() {
   if (!AUTH_TOKEN || AUTH_TOKEN === 'NOT_LOGGED_IN') {
-    console.error('\n❌ AUTH_TOKEN required. Get it from the browser console while logged in at code-insights-quiz-ai.web.app:');
+    console.error('\n❌ AUTH_TOKEN required. Get it from the browser console while logged in at study-forge-ai.web.app:');
     console.error('   (await firebase.auth().currentUser?.getIdToken()) || "NOT_LOGGED_IN"\n');
     process.exit(1);
   }

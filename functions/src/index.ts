@@ -1,5 +1,5 @@
 /**
- * Firebase Functions for Code Insights AI Quiz Generator
+ * Firebase Functions for Study Forge AI Quiz Generator
  * 
  * Phase 3: Core Backend Functionality
  * - Web scraping for article content

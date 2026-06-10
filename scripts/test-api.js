@@ -1,14 +1,14 @@
 const admin = require('firebase-admin');
 const http = require('http');
 
-admin.initializeApp({ projectId: 'code-insights-quiz-ai' });
+admin.initializeApp({ projectId: 'study-forge-ai' });
 
 function callApi(fnName, data, idToken) {
   const postData = JSON.stringify({ data });
   return new Promise((resolve, reject) => {
     const req = http.request({
       hostname: 'localhost', port: 5001,
-      path: '/code-insights-quiz-ai/asia-east1/' + fnName,
+      path: '/study-forge-ai/asia-east1/' + fnName,
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ async function main() {
   const idToken = await new Promise((resolve, reject) => {
     const req = http.request({
       hostname: 'localhost', port: 9099,
-      path: '/identitytoolkit.googleapis.com/v1/accounts:signInWithCustomToken?key=code-insights-quiz-ai',
+      path: '/identitytoolkit.googleapis.com/v1/accounts:signInWithCustomToken?key=study-forge-ai',
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Content-Length': postData.length }
     }, res => {

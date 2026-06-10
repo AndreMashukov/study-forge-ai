@@ -1,6 +1,6 @@
 import os
 
-os.makedirs('/a0/usr/workdir/code-insights-ai/tmp', exist_ok=True)
+os.makedirs('/a0/usr/workdir/study-forge-ai/tmp', exist_ok=True)
 
 # Use HTML entities for special chars to avoid encoding issues
 html = []
@@ -463,8 +463,8 @@ h('</div>')
 h('<script>function showView(id,el){document.querySelectorAll(".view").forEach(v=>v.classList.remove("active"));document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));document.getElementById("view-"+id).classList.add("active");el.classList.add("active");}</script>')
 h('</body></html>')
 
-with open('/a0/usr/workdir/code-insights-ai/tmp/rule-editor-wireframe.html', 'w', encoding='utf-8') as f:
+with open('/a0/usr/workdir/study-forge-ai/tmp/rule-editor-wireframe.html', 'w', encoding='utf-8') as f:
     f.write('\n'.join(html))
 
 print('Wireframe HTML generated successfully!')
-print(f'File size: {os.path.getsize("/a0/usr/workdir/code-insights-ai/tmp/rule-editor-wireframe.html")} bytes')
+print(f'File size: {os.path.getsize("/a0/usr/workdir/study-forge-ai/tmp/rule-editor-wireframe.html")} bytes')

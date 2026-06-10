@@ -19,22 +19,22 @@ else
 fi
 
 # Additional enhancements for the workspace
-export CODE_INSIGHTS_AI_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+export STUDY_FORGE_AI_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 
 # Custom prompt function to show current project context
-__code_insights_ai_prompt() {
-    if [[ "$PWD" == "$CODE_INSIGHTS_AI_ROOT"* ]]; then
-        local relative_path="${PWD#$CODE_INSIGHTS_AI_ROOT}"
+__study_forge_ai_prompt() {
+    if [[ "$PWD" == "$STUDY_FORGE_AI_ROOT"* ]]; then
+        local relative_path="${PWD#$STUDY_FORGE_AI_ROOT}"
         if [[ -z "$relative_path" ]]; then
             relative_path="/"
         fi
-        echo -e "\033[36m[code-insights-ai:$relative_path]\033[0m "
+        echo -e "\033[36m[study-forge-ai:$relative_path]\033[0m "
     fi
 }
 
 # Add to prompt if PS1 exists
 if [[ -n "$PS1" ]]; then
-    PS1='$(__code_insights_ai_prompt)'$PS1
+    PS1='$(__study_forge_ai_prompt)'$PS1
 fi
 
 # Nx shortcuts
@@ -46,8 +46,8 @@ alias nxt='npx nx test'
 alias nxl='npx nx lint'
 
 # Quick navigation aliases
-alias cdweb='cd $CODE_INSIGHTS_AI_ROOT/web'
-alias cdfunctions='cd $CODE_INSIGHTS_AI_ROOT/functions'
-alias cdlibs='cd $CODE_INSIGHTS_AI_ROOT/libs'
+alias cdweb='cd $STUDY_FORGE_AI_ROOT/web'
+alias cdfunctions='cd $STUDY_FORGE_AI_ROOT/functions'
+alias cdlibs='cd $STUDY_FORGE_AI_ROOT/libs'
 
-echo "VS Code Shell Integration for code-insights-ai workspace loaded."
+echo "VS Code Shell Integration for study-forge-ai workspace loaded."

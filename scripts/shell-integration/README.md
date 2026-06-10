@@ -1,6 +1,6 @@
 # VS Code Shell Integration Setup
 
-This directory contains VS Code shell integration setup for the `code-insights-ai` workspace. Shell integration enhances your terminal experience with features like command decorations, navigation, directory detection, and IntelliSense.
+This directory contains VS Code shell integration setup for the `study-forge-ai` workspace. Shell integration enhances your terminal experience with features like command decorations, navigation, directory detection, and IntelliSense.
 
 ## Features
 
@@ -36,7 +36,7 @@ Choose your shell and follow the appropriate instructions:
 Add to your `~/.bashrc` (Linux) or `~/.bash_profile` (macOS):
 
 ```bash
-[[ "$TERM_PROGRAM" == "vscode" ]] && source "/path/to/code-insights-ai/scripts/shell-integration/bash-integration.sh"
+[[ "$TERM_PROGRAM" == "vscode" ]] && source "/path/to/study-forge-ai/scripts/shell-integration/bash-integration.sh"
 ```
 
 #### Zsh
@@ -44,7 +44,7 @@ Add to your `~/.bashrc` (Linux) or `~/.bash_profile` (macOS):
 Add to your `~/.zshrc`:
 
 ```zsh
-[[ "$TERM_PROGRAM" == "vscode" ]] && source "/path/to/code-insights-ai/scripts/shell-integration/zsh-integration.zsh"
+[[ "$TERM_PROGRAM" == "vscode" ]] && source "/path/to/study-forge-ai/scripts/shell-integration/zsh-integration.zsh"
 ```
 
 #### Fish
@@ -52,7 +52,7 @@ Add to your `~/.zshrc`:
 Add to your `~/.config/fish/config.fish`:
 
 ```fish
-string match -q "$TERM_PROGRAM" "vscode"; and source "/path/to/code-insights-ai/scripts/shell-integration/fish-integration.fish"
+string match -q "$TERM_PROGRAM" "vscode"; and source "/path/to/study-forge-ai/scripts/shell-integration/fish-integration.fish"
 ```
 
 #### PowerShell
@@ -60,7 +60,7 @@ string match -q "$TERM_PROGRAM" "vscode"; and source "/path/to/code-insights-ai/
 Add to your PowerShell profile (find location with `$PROFILE`):
 
 ```powershell
-if ($env:TERM_PROGRAM -eq "vscode") { . "/path/to/code-insights-ai/scripts/shell-integration/powershell-integration.ps1" }
+if ($env:TERM_PROGRAM -eq "vscode") { . "/path/to/study-forge-ai/scripts/shell-integration/powershell-integration.ps1" }
 ```
 
 ## Workspace Features
@@ -70,8 +70,8 @@ The integration scripts provide additional workspace-specific features:
 ### Project Context Prompt
 Shows the current location within the project:
 ```
-[code-insights-ai:/web] $ npm run dev
-[code-insights-ai:/functions] $ nx build
+[study-forge-ai:/web] $ npm run dev
+[study-forge-ai:/functions] $ nx build
 ```
 
 ### Nx Shortcuts

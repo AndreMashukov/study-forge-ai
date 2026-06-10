@@ -3,9 +3,9 @@
 # Firebase Functions GitHub Actions Deployment Fix
 # This script applies the correct IAM permissions for Firebase Functions v2 deployment
 
-PROJECT_ID="code-insights-quiz-ai"
-GITHUB_SA="github-action-1057960904@code-insights-quiz-ai.iam.gserviceaccount.com"
-APPENGINE_SA="code-insights-quiz-ai@appspot.gserviceaccount.com"
+PROJECT_ID="study-forge-ai"
+GITHUB_SA="github-action-1057960904@study-forge-ai.iam.gserviceaccount.com"
+APPENGINE_SA="study-forge-ai@appspot.gserviceaccount.com"
 
 echo "🔧 Fixing Firebase Functions deployment permissions..."
 echo "Project: $PROJECT_ID"

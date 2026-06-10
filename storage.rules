@@ -1,6 +1,6 @@
 rules_version = '2';
 
-// Firebase Storage Security Rules for Code Insights AI
+// Firebase Storage Security Rules for Study Forge AI
 // Implements secure document storage with user isolation
 service firebase.storage {
   match /b/{bucket}/o {

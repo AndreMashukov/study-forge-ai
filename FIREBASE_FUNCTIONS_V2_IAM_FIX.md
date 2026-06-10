@@ -71,7 +71,7 @@ Firebase Functions v2 create Cloud Run services with lowercase names:
 ```bash
 gcloud run services get-iam-policy getrules \
   --region=asia-east1 \
-  --project=code-insights-quiz-ai \
+  --project=study-forge-ai \
   --format=json
 ```
 
@@ -86,7 +86,7 @@ gcloud run services add-iam-policy-binding getrules \
   --region=asia-east1 \
   --member="allUsers" \
   --role="roles/run.invoker" \
-  --project=code-insights-quiz-ai
+  --project=study-forge-ai
 ```
 
 **Why `allUsers`?**
@@ -207,7 +207,7 @@ for func in createrule getrule getrules updaterule deleterule \
     --region=asia-east1 \
     --member="allUsers" \
     --role="roles/run.invoker" \
-    --project=code-insights-quiz-ai
+    --project=study-forge-ai
 done
 ```
 
@@ -239,7 +239,7 @@ Create `scripts/fix-iam-permissions.sh`:
 # Firebase Functions v2 IAM Fix Script
 # Adds Cloud Run invoker permissions for all callable functions
 
-PROJECT_ID="code-insights-quiz-ai"
+PROJECT_ID="study-forge-ai"
 REGION="asia-east1"
 
 # List of callable functions (lowercase Cloud Run service names)
@@ -461,7 +461,7 @@ catch (error) {
         --region=asia-east1 \
         --member="allUsers" \
         --role="roles/run.invoker" \
-        --project=code-insights-quiz-ai || echo "Failed to set IAM for $func (may already be set)"
+        --project=study-forge-ai || echo "Failed to set IAM for $func (may already be set)"
     done
 ```
 

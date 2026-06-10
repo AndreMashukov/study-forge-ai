@@ -27,7 +27,7 @@
  *   - or: gcloud auth application-default login
  *
  * Emulator (optional):
- *   FIRESTORE_EMULATOR_HOST=localhost:8080 GCLOUD_PROJECT=code-insights-quiz-ai \
+ *   FIRESTORE_EMULATOR_HOST=localhost:8080 GCLOUD_PROJECT=study-forge-ai \
  *     npx tsx scripts/migrations/backfill-directory-centric.ts --dry-run
  *
  * Load .env.local from repo root (same pattern as other scripts):
