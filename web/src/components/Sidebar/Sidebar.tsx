@@ -8,6 +8,8 @@ import {
   FileText,
   Sparkles,
   LogOut,
+  ChevronsLeft,
+  ChevronsRight,
 } from 'lucide-react';
 import { useSignOut } from 'react-firebase-hooks/auth';
 import { auth } from '../../config/firebase';
