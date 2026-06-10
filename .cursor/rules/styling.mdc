@@ -1,0 +1,53 @@
+---
+description: Styling with Tailwind CSS 3, shadcn/ui, and design tokens
+globs:
+  - web/src/**/*.{ts,tsx}
+  - web/src/styles.css
+alwaysApply: false
+---
+
+# Styling — shadcn/ui + Tailwind CSS 3
+
+## Stack
+
+- **shadcn/ui** primitives in `web/src/components/ui/`
+- **Tailwind CSS 3** with `@tailwind` directives in `web/src/styles.css`
+- **Lucide React** for icons — no inline SVGs
+- **`cn()`** from `web/src/lib/utils.ts` for conditional classes
+
+## Design Tokens (CSS variables)
+
+```css
+--background: 0 0 0;
+--foreground: 255 255 255;
+--card: 17 17 17;
+--primary: 139 92 246;
+--accent: 34 197 94;
+--muted: 39 39 42;
+--destructive: 239 68 68;
+--border: 39 39 42;
+--radius: 0.75rem;
+```
+
+## Usage
+
+```typescript
+import { cn } from '../../lib/utils';
+import { Button } from '../ui/button';
+
+<div className={cn('rounded-lg bg-card text-foreground', isActive && 'ring-2 ring-primary')}>
+  <Button variant="outline" size="sm">Action</Button>
+</div>
+```
+
+## Rules
+
+- ❌ NEVER use MUI — this project has no MUI dependency
+- ❌ NEVER use arbitrary hex colors when a token exists
+- ✅ USE shadcn/ui components (`Button`, `Card`, `Dialog`, etc.)
+- ✅ USE Lucide icons: `import { FileText } from 'lucide-react'`
+- ✅ USE `cn()` for conditional Tailwind classes
+- Button variants: `default`, `destructive`, `outline`, `secondary`, `ghost`, `link`
+- Write accessible markup with proper ARIA labels
+
+See [docs/architecture/components-layer.md](../../docs/architecture/components-layer.md).

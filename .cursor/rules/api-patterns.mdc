@@ -1,0 +1,55 @@
+---
+description: API patterns with RTK Query and Firebase callable functions
+globs:
+  - web/src/store/api/**/*.ts
+  - web/src/store/slices/**/*.ts
+alwaysApply: false
+---
+
+# API Patterns — RTK Query + Firebase Callables
+
+## Base Query
+
+All API requests go through `web/src/store/api/baseApi.ts` using `firebaseCallableBaseQuery`:
+
+- Calls `httpsCallable(functions, functionName)` with optional timeout
+- Returns `{ data }` or `{ error: { status, data } }`
+- Never call `httpsCallable` directly from components
+
+## Endpoint Pattern
+
+```typescript
+import { baseApi } from '../baseApi';
+import type { DocumentEnhanced } from '@shared-types';
+
+export const documentsApi = baseApi.injectEndpoints({
+  endpoints: (builder) => ({
+    getDocument: builder.query<DocumentEnhanced, string>({
+      query: (documentId) => ({
+        functionName: 'getDocument',
+        data: { documentId },
+      }),
+      transformResponse: (response: { success: boolean; document: DocumentEnhanced }) =>
+        response.document,
+      providesTags: (_result, _error, id) => [{ type: 'Document', id }],
+    }),
+  }),
+});
+```
+
+## Rules
+
+- One API file per domain under `web/src/store/api/{Domain}/`
+- Use `providesTags` / `invalidatesTags` for cache management
+- Shared types from `@shared-types` for cross-boundary contracts
+- `transformResponse` unwraps `{ success, data }` envelopes
+- Long-running functions: pass `timeout` in query args
+- Mutations in handler hooks, not in `useEffect`
+- API data lives in RTK Query cache — do not duplicate in Redux slices
+
+## Naming
+
+- Hooks: `use{Action}{Entity}Query` / `use{Action}{Entity}Mutation`
+- Files: `{Domain}Api.ts`, optional `I{Domain}Api.ts`
+
+See [docs/architecture/api-layer.md](../../docs/architecture/api-layer.md) for full templates.

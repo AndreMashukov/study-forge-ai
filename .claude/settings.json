@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(NX_DAEMON=false NX_ISOLATE_PLUGINS=false yarn nx run web:typecheck)",
+      "Bash(NX_DAEMON=false NX_ISOLATE_PLUGINS=false yarn nx run web:lint)",
+      "Bash(NX_DAEMON=false NX_ISOLATE_PLUGINS=false yarn nx run web:build)",
+      "Bash(NX_DAEMON=false NX_ISOLATE_PLUGINS=false yarn nx run functions:lint)",
+      "Bash(NX_DAEMON=false NX_ISOLATE_PLUGINS=false yarn nx run functions:build)",
+      "Bash(npx tsx scripts/seed-setup/setup-seed-data.ts)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "playwright"
+  ]
+}

@@ -159,6 +159,12 @@ test-results/
 .github/instructions/examples/*
 .github/instructions/*
 docs/*
+!docs/architecture/
+!docs/architecture/**
+!docs/prompts/
+!docs/prompts/**
+!docs/development-workflows/
+!docs/development-workflows/**
 
 # Firebase backups (contain sensitive data)
 *.backup

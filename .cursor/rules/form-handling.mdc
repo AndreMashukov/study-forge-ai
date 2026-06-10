@@ -1,0 +1,54 @@
+---
+description: Form handling with React Hook Form and Zod validation
+globs:
+  - web/src/pages/**/*.{ts,tsx}
+  - web/src/components/**/Form*.tsx
+alwaysApply: false
+---
+
+# Form Handling — React Hook Form + Zod
+
+## Approach
+
+- **Simple inputs**: `useState` for controlled fields
+- **Complex forms**: React Hook Form + Zod; always name the form instance `form`
+
+## Schema Pattern
+
+```typescript
+import { z } from 'zod';
+
+export const createDocumentSchema = z.object({
+  title: z.string().min(1, 'Title is required'),
+  content: z.string().min(1, 'Content is required'),
+});
+
+export type CreateDocumentFormData = z.infer<typeof createDocumentSchema>;
+```
+
+## Form Setup
+
+```typescript
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+
+const form = useForm<CreateDocumentFormData>({
+  resolver: zodResolver(createDocumentSchema),
+  defaultValues: { title: '', content: '' },
+});
+```
+
+## Validation
+
+- Validate with Zod `safeParse` before submission when not using `zodResolver`
+- Collect field errors by path for display
+- Mutations triggered in handler hooks after validation passes
+
+## Rules
+
+- Check existing Zod schemas before creating new ones
+- Form submission handlers live in `use{Page}Handlers` hooks
+- Use shadcn `Form`, `FormField`, `FormItem`, `FormLabel`, `FormMessage` components
+- Never bypass validation with type assertions on form data
+
+See [AGENTS.md](../../AGENTS.md) Form Handling section.

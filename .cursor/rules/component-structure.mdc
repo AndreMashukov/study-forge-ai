@@ -1,0 +1,71 @@
+---
+description: Component structure, page context pattern, and Redux access
+globs:
+  - web/src/components/**/*.{ts,tsx}
+  - web/src/pages/**/*.{ts,tsx}
+alwaysApply: false
+---
+
+# Component Structure and Organization
+
+## Source Layout
+
+All web source in `web/src/`:
+
+- **Components**: `web/src/components/` (shadcn primitives in `ui/`)
+- **Pages**: `web/src/pages/{FeatureNamePage}/`
+- **Store**: `web/src/store/`
+
+## Shared Component Structure
+
+```
+web/src/components/ComponentName/
+├── index.ts
+├── ComponentName.tsx
+├── IComponentName.ts
+└── ComponentName.styles.ts   # optional CVA/Tailwind constants
+```
+
+## Page Structure (context-based)
+
+```
+web/src/pages/FeatureNamePage/
+├── index.ts
+├── FeatureNamePage.tsx              # ProtectedRoute + Provider
+├── FeatureNamePageContainer/
+│   ├── FeatureNamePageContainer.tsx
+│   └── SubComponent/
+├── context/
+│   ├── FeatureNamePageContext.ts
+│   ├── FeatureNamePageProvider.tsx  # orchestrates hooks only
+│   └── hooks/
+│       ├── api/useFetchFeaturePageData.ts
+│       ├── useFeaturePageHandlers.ts
+│       ├── useFeaturePageEffects.ts
+│       └── useFeaturePageContext.ts
+├── types/
+└── utils/
+```
+
+## Rules
+
+- **Providers**: orchestrate hooks only — no `useState`, `useSelector`, or `useEffect` directly
+- **Containers**: consume context, early return for loading/error, render UI
+- **Redux**: `useSelector` in components/hooks, not prop drilling
+- **Interfaces**: prefix with `I` (e.g., `IDocumentsPageContext`)
+- **Exports**: named exports for all components
+- **Handlers**: prefix with `handle` (e.g., `handleSubmit`)
+
+## Page Template
+
+```typescript
+export const DocumentsPage = () => (
+  <ProtectedRoute>
+    <DocumentsPageProvider>
+      <DocumentsPageContainer />
+    </DocumentsPageProvider>
+  </ProtectedRoute>
+);
+```
+
+See [docs/architecture/components-layer.md](../../docs/architecture/components-layer.md) and [AGENTS.md](../../AGENTS.md).

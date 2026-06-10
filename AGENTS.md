@@ -17,11 +17,35 @@
 
 # Code Insights AI — Coding Conventions
 
+> **Claude Code** reads [CLAUDE.md](CLAUDE.md) as the project entry point. This file is the full reference for all AI agents.
+
 ## Project Overview
 
 React + TypeScript web app in an NX monorepo. All source lives in `web/src/`. UI is built with shadcn/ui and Tailwind CSS. Routing uses React Router DOM **v6**. State is managed with Redux Toolkit + RTK Query. Auth uses Firebase Authentication.
 
 > **Never use MUI (Material UI).** This project does not have MUI as a dependency. Use shadcn/ui + Tailwind for all UI.
+
+## Documentation Map
+
+| Topic            | Location                                                                                                       |
+| ---------------- | -------------------------------------------------------------------------------------------------------------- |
+| Claude Code      | [CLAUDE.md](CLAUDE.md)                                                                                         |
+| API patterns     | [docs/architecture/api-layer.md](docs/architecture/api-layer.md)                                               |
+| Redux state      | [docs/architecture/state-layer.md](docs/architecture/state-layer.md)                                           |
+| Custom hooks     | [docs/architecture/hooks-layer.md](docs/architecture/hooks-layer.md)                                           |
+| Components       | [docs/architecture/components-layer.md](docs/architecture/components-layer.md)                                 |
+| Coding standards | [docs/development-workflows/coding/coding-standards.md](docs/development-workflows/coding/coding-standards.md) |
+| Git commits      | [docs/prompts/git-commit.md](docs/prompts/git-commit.md)                                                       |
+| Git branches     | [docs/prompts/git-branch.md](docs/prompts/git-branch.md)                                                       |
+| Pull requests    | [docs/prompts/github-pr.md](docs/prompts/github-pr.md)                                                          |
+| Code review      | [docs/prompts/code-review.md](docs/prompts/code-review.md)                                                      |
+| Cursor rules     | [.cursor/rules/](.cursor/rules/)                                                                               |
+
+## Git Workflow
+
+- **Branch naming:** `<type>/<description>/<initials>` (e.g., `feat/add-quiz-filter/am`)
+- **Commits:** Multi-line conventional commits — see [docs/prompts/git-commit.md](docs/prompts/git-commit.md)
+- **PRs:** See [docs/prompts/github-pr.md](docs/prompts/github-pr.md)
 
 ---
 
