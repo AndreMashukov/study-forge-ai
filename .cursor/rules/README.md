@@ -1,6 +1,6 @@
 # Cursor Rules Documentation
 
-Project-wide Cursor AI rules organized by category. Claude Code reads `CLAUDE.md` at the root; these rules provide file-scoped context for Cursor.
+Project-wide Cursor AI rules organized by category. Claude Code reads `CLAUDE.md` at the root and auto-loads path-scoped rules from `.claude/rules/`. These `.mdc` files provide equivalent file-scoped context for Cursor.
 
 ## Organization
 
@@ -35,9 +35,21 @@ React Hook Form + Zod validation, form instance named `form`.
 
 shadcn/ui + Tailwind CSS 3, design tokens, no MUI.
 
+## Claude Code Parity
+
+| Cursor rule | Claude rule |
+|-------------|-------------|
+| `api-patterns.mdc` | `.claude/rules/api-patterns.md` |
+| `component-structure.mdc` | `.claude/rules/component-structure.md` |
+| `form-handling.mdc` | `.claude/rules/form-handling.md` |
+| `styling.mdc` | `.claude/rules/styling.md` |
+
+Additional Claude-only rules: `typescript.md`, `firebase-functions.md`, `production-infra.md`
+
 ## Related Documentation
 
 - [CLAUDE.md](../../CLAUDE.md) — Claude Code entry point
+- [.claude/skills/](../../.claude/skills/) — Tool and knowledge skills
 - [AGENTS.md](../../AGENTS.md) — Full project conventions
 - [docs/architecture/](../../docs/architecture/) — Layer pattern templates
 - [docs/prompts/](../../docs/prompts/) — Git workflow prompts
