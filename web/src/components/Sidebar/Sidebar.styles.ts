@@ -7,17 +7,6 @@ export const sidebarStyles = {
   ),
   expanded: "w-[220px]",
   collapsed: "w-[64px]",
-  header: cn(
-    "border-b border-border py-3 flex items-center h-10 flex-shrink-0",
-    "bg-card"
-  ),
-  headerExpanded: "px-4 justify-between",
-  headerCollapsed: "px-2 justify-center",
-  toggleButton: cn(
-    "flex h-6 w-6 cursor-pointer items-center justify-center rounded-md",
-    "text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
-  ),
-  headerTitle: "text-sm font-semibold text-foreground truncate",
   section: "border-b border-border last:border-b-0 flex-shrink-0",
   sectionHeader: cn(
     "flex gap-2 px-3 justify-between py-3 items-center cursor-pointer",
