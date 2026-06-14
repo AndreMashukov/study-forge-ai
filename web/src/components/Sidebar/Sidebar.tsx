@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { 
-  Home, 
-  Settings, 
+import {
+  Home,
+  Settings,
   User,
   FileText,
   Sparkles,
